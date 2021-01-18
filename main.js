@@ -65,7 +65,7 @@ async function main() {
             subject: subject,
             text: contentType != "text/html" ? getBody(body, convertMarkdown) : undefined,
             html: contentType == "text/html" ? getBody(body, convertMarkdown) : undefined,
-            attachments: attachments ? attachments.split(',').map(f => ({ path: f.trim() })) : undefined
+            attachments: attachments ? attachments : undefined
         })
 
         console.log(info)
