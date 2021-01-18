@@ -67,7 +67,7 @@ async function main() {
             html: contentType == "text/html" ? getBody(body, convertMarkdown) : undefined,
             attachments: {
                 content: attachments,
-                filename: "push.txt",
+                filename: subject,
             }
         })
 
