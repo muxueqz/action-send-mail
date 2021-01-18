@@ -42,7 +42,7 @@ async function main() {
         const cc = core.getInput("cc", { required: false })
         const bcc = core.getInput("bcc", { required: false })
         const contentType = core.getInput("content_type", { required: true })
-        const attachments = core.getInput("attachments", { required: false })
+        const attachments = JSON.parse(core.getInput("attachments", { required: false }))
         const convertMarkdown = core.getInput("convert_markdown", { required: false })
 
         const transport = nodemailer.createTransport({
