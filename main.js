@@ -43,6 +43,7 @@ async function main() {
         const bcc = core.getInput("bcc", { required: false })
         const contentType = core.getInput("content_type", { required: true })
         const attachments = core.getInput("attachments", { required: false })
+        const attachments_filename = core.getInput("attachments_filename", { required: false })
         const convertMarkdown = core.getInput("convert_markdown", { required: false })
 
         const transport = nodemailer.createTransport({
@@ -67,7 +68,7 @@ async function main() {
             html: contentType == "text/html" ? getBody(body, convertMarkdown) : undefined,
             attachments: {
                 content: attachments,
-                filename: subject + ".txt",
+                filename: attachments_filename,
             }
         })
 
